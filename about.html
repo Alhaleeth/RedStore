@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - REDSTORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/redstore-logo-1.PNG" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="my-orders.html">Orders</a></li>
+                    <li><a href="login.html" id="auth-link">Account</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" style="position: relative; display: inline-block; cursor: pointer;">
+                <a href="cart.html"><img src="images/cart-1.PNG" width="30px" height="30px"
+                        style="vertical-align: middle;"></a>
+                <span id="cart-count"
+                    style="position: absolute; top: -5px; right: -10px; background: #ff523b; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; font-weight: bold;">0</span>
+            </div>
+            <img src="images/menu-2.PNG" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="small-container">
+        <h2 class="title" style="margin-top: 50px;">About RedStore</h2>
+        <div class="row" style="margin-bottom: 50px;">
+            <div class="col-2">
+                <img src="images/exclusive-1.PNG" alt="About Us"
+                    style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            </div>
+            <div class="col-2">
+                <h1 style="font-size: 2.5rem; color: #555; margin-bottom: 20px;">Your Ultimate Fashion Destination</h1>
+                <p style="font-size: 16px; line-height: 1.8; color: #777;">
+                    Welcome to RedStore, your ultimate destination for stylish and contemporary fashion. At RedStore, we
+                    believe that fashion is more than just clothing—it's a way to express your individuality and elevate
+                    your confidence.
+                </p>
+                <p style="font-size: 16px; line-height: 1.8; color: #777; margin-top: 15px;">
+                    Our curated collection features an array of items that cater to every occasion and personal style.
+                    From elegant evening gowns to casual daily wear, each piece is chosen with a keen eye for quality,
+                    trend, and timelessness.
+                </p>
+            </div>
+        </div>
+
+        <!-- Mission & Vision Cards -->
+        <div class="row" style="margin-bottom: 80px; text-align: center; gap: 20px;">
+            <div class="col-3"
+                style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                <i class="fa fa-bullseye" style="font-size: 40px; color: #ff523b; margin-bottom: 15px;"></i>
+                <h3 style="color: #555; margin-bottom: 15px;">Our Mission</h3>
+                <p style="color: #777; font-size: 14px;">To bring you the latest trends and fashion-forward designs with
+                    a seamless shopping experience and dedicated customer support at every step.</p>
+            </div>
+            <div class="col-3"
+                style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                <i class="fa fa-eye" style="font-size: 40px; color: #ff523b; margin-bottom: 15px;"></i>
+                <h3 style="color: #555; margin-bottom: 15px;">Our Vision</h3>
+                <p style="color: #777; font-size: 14px;">To be a global community of fashion enthusiasts, celebrating
+                    art, embracing diverse styles, and empowering uniqueness across all bounds.</p>
+            </div>
+            <div class="col-3"
+                style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                <i class="fa fa-diamond" style="font-size: 40px; color: #ff523b; margin-bottom: 15px;"></i>
+                <h3 style="color: #555; margin-bottom: 15px;">Our Values</h3>
+                <p style="color: #777; font-size: 14px;">Quality craftsmanship, securing customer satisfaction, pushing
+                    creative boundaries, and ensuring fashion remains accessible to the many.</p>
+            </div>
+        </div>
+    </div>
+
+    <!---------footer---------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/playstore-logo.JPEG">
+                        <img src="images/appstore-logo.JPEG">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/redstore-logo-1.PNG">
+                    <p>Our Purpose Is To Sustainably Make the Pleasure and
+                        Benefits of sports Accessible to the Many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2023 RedStore - All Rights Reserved</p>
+        </div>
+    </div>
+
+    <div id="toast-container"
+        style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;">
+    </div>
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>

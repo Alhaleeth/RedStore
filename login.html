@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - REDSTORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/redstore-logo-1.PNG" width="125px"></a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="my-orders.html">Orders</a></li>
+                <li><a href="login.html" id="auth-link">Account</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" style="position: relative; display: inline-block; cursor: pointer;">
+          <a href="cart.html"><img src="images/cart-1.PNG" width="30px" height="30px" style="vertical-align: middle;"></a>
+          <span id="cart-count" style="position: absolute; top: -5px; right: -10px; background: #ff523b; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; font-weight: bold;">0</span>
+        </div>
+        <img src="images/menu-2.PNG" class="menu-icon" onclick="menutoggle()">
+    </div>
+</div>
+
+<div class="account-page" style="padding: 50px 0; background: radial-gradient(#fff,#ffd6d6);">
+    <div class="container">
+        <div class="row">
+            <div class="col-2" style="text-align: center;">
+                <img src="images/image-1.PNG" width="100%">
+            </div>
+            <div class="col-2">
+                <div class="form-container" style="background: #fff; width: 300px; height: 400px; position: relative; text-align: center; padding: 20px 0; margin: auto; box-shadow: 0 0 20px 0px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+                    <div class="form-btn" style="display: flex; justify-content: space-around; padding: 0 20px; align-items: center; border-bottom: none; cursor: pointer;">
+                        <span onclick="toggleForm()" style="font-weight: bold; padding: 10px 0; color: #555;">Login</span>
+                        <span onclick="toggleForm()" style="font-weight: bold; padding: 10px 0; color: #555;">Register</span>
+                        <hr id="Indicator" style="width: 50px; border: none; background: #ff523b; height: 3px; margin-top: 8px; position: absolute; transform: translateX(0px); transition: transform 0.5s; top: 40px; border-radius: 3px; left: 60px;">
+                    </div>
+
+                    <form id="LoginForm" onsubmit="handleLogin(event)" style="max-width: 300px; padding: 0 20px; position: absolute; top: 100px; transform: translateX(0px); transition: transform 0.5s;">
+                        <input type="email" id="log-email" placeholder="Email" required style="width: 100%; height: 40px; margin: 10px 0; padding: 0 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <input type="password" id="log-pass" placeholder="Password" required style="width: 100%; height: 40px; margin: 10px 0; padding: 0 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer; margin: 10px 0; border-radius: 30px;">Login</button>
+                    </form>
+
+                    <form id="RegForm" onsubmit="handleRegister(event)" style="max-width: 300px; padding: 0 20px; position: absolute; top: 100px; transform: translateX(300px); transition: transform 0.5s;">
+                        <input type="text" id="reg-name" placeholder="Full Name" required style="width: 100%; height: 40px; margin: 10px 0; padding: 0 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <input type="email" id="reg-email" placeholder="Email" required style="width: 100%; height: 40px; margin: 10px 0; padding: 0 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <input type="password" id="reg-pass" placeholder="Password" required style="width: 100%; height: 40px; margin: 10px 0; padding: 0 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer; margin: 10px 0; border-radius: 30px;">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;"></div>
+
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+    function menutoggle() {
+        if(MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+
+    // Initialize toggle to specific states if needed
+    let isLogin = true;
+    function toggleForm() {
+        const loginForm = document.getElementById('LoginForm');
+        const regForm = document.getElementById('RegForm');
+        const indicator = document.getElementById('Indicator');
+
+        if (isLogin) {
+            loginForm.style.transform = "translateX(-300px)";
+            regForm.style.transform = "translateX(0px)";
+            indicator.style.transform = "translateX(100px)";
+            isLogin = false;
+        } else {
+            loginForm.style.transform = "translateX(0px)";
+            regForm.style.transform = "translateX(300px)";
+            indicator.style.transform = "translateX(0px)";
+            isLogin = true;
+        }
+    }
+</script>
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

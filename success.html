@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success - REDSTORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/redstore-logo-1.PNG" width="125px"></a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="my-orders.html">Orders</a></li>
+                <li><a href="login.html" id="auth-link">Account</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" style="position: relative; display: inline-block; cursor: pointer;">
+          <a href="cart.html"><img src="images/cart-1.PNG" width="30px" height="30px" style="vertical-align: middle;"></a>
+          <span id="cart-count" style="position: absolute; top: -5px; right: -10px; background: #ff523b; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; font-weight: bold;">0</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="success-container">
+        <i class="fa fa-check-circle success-icon" style="font-size: 80px; color: #4CAF50; margin-bottom: 20px; display: inline-block;"></i>
+        <h1 style="color: #333; margin-bottom: 10px;">Order Placed Successfully!</h1>
+        <p style="color: #777; font-size: 16px; margin-bottom: 30px;">Thank you for shopping with us. Your order details are below.</p>
+        
+        <div style="background: #fdfdfd; border: 1px solid #eee; padding: 25px; border-radius: 8px; text-align: left; max-width: 400px; margin: 0 auto 30px;">
+            <p style="margin-bottom: 10px; font-size: 16px;"><strong style="color: #555;">Order ID:</strong> <span id="succ-id" style="color: #ff523b;">#</span></p>
+            <p style="margin-bottom: 10px; font-size: 16px;"><strong style="color: #555;">Total Amount:</strong> <span id="succ-total">₹0.00</span></p>
+            <p style="margin-bottom: 10px; font-size: 16px;"><strong style="color: #555;">Payment Method:</strong> <span id="succ-method">-</span></p>
+            <p style="margin-bottom: 10px; font-size: 16px;"><strong style="color: #555;">Date:</strong> <span id="succ-date">-</span></p>
+        </div>
+        
+        <a href="product.html" class="btn" style="background: #ff523b; color: white; padding: 12px 30px; text-decoration: none; border-radius: 30px; font-weight: 500; font-size: 16px;">Continue Shopping</a>
+    </div>
+</div>
+
+<script src="main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('orderId');
+        
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+        let currentOrder = null;
+        
+        if (orderId) {
+            currentOrder = orders.find(o => o.orderId === orderId);
+        } else if (orders.length > 0) {
+            currentOrder = orders[orders.length - 1]; // fallback to last
+        }
+        
+        if (currentOrder) {
+            document.getElementById('succ-id').innerText = currentOrder.orderId;
+            document.getElementById('succ-total').innerText = '₹' + currentOrder.total.toFixed(2);
+            document.getElementById('succ-method').innerText = currentOrder.paymentMethod;
+            document.getElementById('succ-date').innerText = currentOrder.date;
+        } else {
+            document.getElementById('succ-id').innerText = "#Unknown";
+            showToast("No recent order found.");
+        }
+    });
+
+    // Add success container animation dynamically in JS if css is missing
+    const icon = document.querySelector('.success-icon');
+    icon.animate([
+        { transform: 'scale(0)' },
+        { transform: 'scale(1.2)' },
+        { transform: 'scale(1)' }
+    ], { duration: 600, easing: 'ease-out' });
+</script>
+</body>
+</html>

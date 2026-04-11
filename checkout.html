@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - REDSTORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/redstore-logo-1.PNG" width="125px"></a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="my-orders.html">Orders</a></li>
+                <li><a href="login.html" id="auth-link">Account</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" style="position: relative; display: inline-block; cursor: pointer;">
+          <a href="cart.html"><img src="images/cart-1.PNG" width="30px" height="30px" style="vertical-align: middle;"></a>
+          <span id="cart-count" style="position: absolute; top: -5px; right: -10px; background: #ff523b; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; font-weight: bold;">0</span>
+        </div>
+        <img src="images/menu-2.PNG" class="menu-icon" onclick="menutoggle()">
+    </div>
+</div>
+
+<div class="small-container">
+    <div class="checkout-wrapper" style="display: flex; flex-wrap: wrap; gap: 30px; margin: 40px auto;">
+        
+        <!-- User Information Form -->
+        <div style="flex: 1; min-width: 300px; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <h3 style="color: #555; margin-bottom: 20px; font-size: 22px;">Shipping Address</h3>
+            <form id="checkoutForm" onsubmit="processCheckout(event)" data-payment-method="cod">
+                <input type="text" id="chk-name" placeholder="Full Name" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Poppins';">
+                <input type="text" id="chk-phone" placeholder="Phone Number" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Poppins';">
+                <textarea id="chk-address" placeholder="Complete Shipping Address" rows="4" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Poppins'; resize: none;"></textarea>
+                
+                <h3 style="color: #555; margin: 25px 0 15px; font-size: 22px;">Payment Method</h3>
+                <div class="payment-options">
+                    <div class="payment-option active" id="opt-cod" onclick="togglePaymentMethod('cod')">
+                        <i class="fa fa-money" style="font-size: 24px; color: #555; margin-bottom: 5px;"></i><br>COD
+                    </div>
+                    <div class="payment-option" id="opt-card" onclick="togglePaymentMethod('card')">
+                        <i class="fa fa-credit-card" style="font-size: 24px; color: #555; margin-bottom: 5px;"></i><br>Card
+                    </div>
+                    <div class="payment-option" id="opt-upi" onclick="togglePaymentMethod('upi')">
+                        <i class="fa fa-qrcode" style="font-size: 24px; color: #555; margin-bottom: 5px;"></i><br>UPI
+                    </div>
+                </div>
+
+                <!-- Dynamic Forms for Payments -->
+                <div id="card-details" class="payment-details">
+                    <h4 style="margin-bottom: 10px; color: #555;">Enter Card Details (Dummy)</h4>
+                    <input type="text" id="card-no" placeholder="Card Number (0000 0000 0000 0000)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Poppins';">
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="card-exp" placeholder="MM/YY" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Poppins';">
+                        <input type="password" id="card-cvv" placeholder="CVV" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Poppins';">
+                    </div>
+                </div>
+
+                <div id="upi-details" class="payment-details">
+                    <h4 style="margin-bottom: 10px; color: #555;">Enter UPI ID (Dummy)</h4>
+                    <input type="text" id="upi-id" placeholder="example@upi" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Poppins';">
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; font-size: 18px; margin-top: 20px; font-weight: 500;">Place Order & Pay</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;"></div>
+
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="auth.js"></script>
+<script src="checkout.js"></script>
+</body>
+</html>

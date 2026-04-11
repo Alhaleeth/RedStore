@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - REDSTORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/redstore-logo-1.PNG" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="my-orders.html">Orders</a></li>
+                    <li><a href="login.html" id="auth-link">Account</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" style="position: relative; display: inline-block; cursor: pointer;">
+                <a href="cart.html"><img src="images/cart-1.PNG" width="30px" height="30px"
+                        style="vertical-align: middle;"></a>
+                <span id="cart-count"
+                    style="position: absolute; top: -5px; right: -10px; background: #ff523b; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; font-weight: bold;">0</span>
+            </div>
+            <img src="images/menu-2.PNG" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <div class="small-container">
+        <h2 class="title" style="margin-top: 50px;">Contact Us</h2>
+
+        <div class="row" style="margin-bottom: 80px; align-items: flex-start;">
+            <!-- Contact Information -->
+            <div class="col-2"
+                style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                <h3 style="color: #555; margin-bottom: 20px; font-size: 24px;">Get In Touch</h3>
+                <div class="contact-info" style="color: #777; font-size: 16px; line-height: 2;">
+                    <p><i class="fa fa-user" style="color: #ff523b; width: 25px;"></i> Mohamed Alhaleeth</p>
+                    <p><i class="fa fa-tag" style="color: #ff523b; width: 25px;"></i> Web Designer & Developer</p>
+                    <p><i class="fa fa-map-marker" style="color: #ff523b; width: 25px;"></i> 93A1, West Street,
+                        Senthalaipattinam, Thanjavur, Tamilnadu</p>
+                    <p><i class="fa fa-envelope" style="color: #ff523b; width: 25px;"></i> <a
+                            href="mailto:mohamedalhaleeth0703@gmail.com"
+                            style="color: #ff523b; text-decoration: none;">mohamedalhaleeth0703@gmail.com</a></p>
+                    <p><i class="fa fa-phone" style="color: #ff523b; width: 25px;"></i> <a href="tel:+919360550491"
+                            style="color: #777; text-decoration: none;">+91 9360550491</a></p>
+
+                    <div class="social" style="margin-top: 25px; display: flex; gap: 15px;">
+                        <a href="#"
+                            style="color: #fff; background: #ff523b; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: transform 0.3s;"><i
+                                class="fa fa-twitter"></i></a>
+                        <a href="#"
+                            style="color: #fff; background: #ff523b; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: transform 0.3s;"><i
+                                class="fa fa-facebook"></i></a>
+                        <a href="#"
+                            style="color: #fff; background: #ff523b; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: transform 0.3s;"><i
+                                class="fa fa-linkedin"></i></a>
+                        <a href="#"
+                            style="color: #fff; background: #ff523b; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: transform 0.3s;"><i
+                                class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-2"
+                style="background: radial-gradient(#fff,#ffd6d6); padding: 40px; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                <h3 style="color: #555; margin-bottom: 20px; font-size: 24px;">Send us a Message</h3>
+                <form id="contactForm"
+                    onsubmit="event.preventDefault(); showToast('Message Sent Successfully!'); this.reset();">
+                    <input type="text" placeholder="Your Name" required
+                        style="width: 100%; padding: 12px 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; outline: none; font-family: 'Poppins';">
+                    <input type="email" placeholder="Your Email" required
+                        style="width: 100%; padding: 12px 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; outline: none; font-family: 'Poppins';">
+                    <textarea rows="5" placeholder="Your Message" required
+                        style="width: 100%; padding: 12px 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; outline: none; resize: none; font-family: 'Poppins';"></textarea>
+                    <button type="submit" class="btn" style="border: none; width: 100%; font-size: 16px;">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!---------footer---------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/playstore-logo.JPEG">
+                        <img src="images/appstore-logo.JPEG">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/redstore-logo-1.PNG">
+                    <p>Our Purpose Is To Sustainably Make the Pleasure and
+                        Benefits of sports Accessible to the Many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2023 RedStore - All Rights Reserved</p>
+        </div>
+    </div>
+
+    <div id="toast-container"
+        style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;">
+    </div>
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>
